@@ -1,12 +1,22 @@
-# .circleci/config.yml
+# Golang CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-go/ for more details
 version: 2
 jobs:
+  build:
+    docker:
+      - image: circleci/golang:1.12
+    steps:
+      - checkout
+
+      - run: go test -v ./...
   release:
     docker:
       - image: circleci/golang:1.12
     steps:
       - checkout
       - run: curl -sL https://git.io/goreleaser | bash
+# .circleci/config.yml
 workflows:
   version: 2
   release:
