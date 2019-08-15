@@ -16,7 +16,6 @@ jobs:
     steps:
       - checkout
       - run: curl -sL https://git.io/goreleaser | bash
-# .circleci/config.yml
 workflows:
   version: 2
   release:
