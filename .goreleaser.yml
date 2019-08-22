@@ -31,3 +31,8 @@ changelog:
     exclude:
     - '^docs:'
     - '^test:'
+dockers:
+  -
+    image_templates:
+    - ecadlabs/tezos-indexer-api
+    dockerfile: Dockerfile
